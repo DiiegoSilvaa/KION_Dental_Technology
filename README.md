@@ -37,3 +37,6 @@ A **KION Dental Technology** é um laboratório de prótese dentária que trabal
 * **Site:** [kiondental.tech](https://kiondental.tech/)
 
 **KION Dental Technology** — tecnologia aplicada à odontologia.
+
+**Comprovação de contato**
+<img width="882" height="200" alt="WhatsApp Image 2026-10-30 at 08 22 11" src="https://github.com/user-attachments/assets/5318ec53-9fab-40db-8b31-79320974dfa2" />
