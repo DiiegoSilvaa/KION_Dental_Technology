@@ -1,0 +1,387 @@
+/* ==========================================================
+   Kion Dental Tech - folha de estilo
+   Paleta inspirada em https://kiondental.tech/ (azul + amarelo).
+   Para ajustar as cores do site inteiro, mexa só nas variáveis abaixo.
+   ========================================================== */
+
+:root {
+    /* ===== PALETA - troque só estes valores e o site inteiro muda ===== */
+    --azul-escuro: #0b2a4f;   /* cabeçalho, rodapé, títulos */
+    --azul-medio:  #123d75;   /* final do degradê do cabeçalho */
+    --azul:        #1b5fb8;   /* cor principal: botões, bordas, marcadores */
+    --azul-claro:  #e8f0fb;   /* fundo dos cartões */
+    --amarelo:     #ffc20e;   /* cor de destaque: menu ativo, botão enviar, faixas */
+    --amarelo-escuro: #e6aa00; /* destaque ao passar o mouse */
+    --texto:       #1f2a37;   /* texto do corpo */
+    --texto-header: #cfe0f5;  /* texto secundário sobre fundo escuro */
+    --fundo:       #f5f8fc;   /* fundo da página */
+    --branco:      #ffffff;   /* fundo dos blocos */
+    --borda:       #d5e0ef;   /* bordas dos blocos e cartões */
+    --borda-campo: #b9c8dd;   /* bordas dos campos do formulário */
+
+    /* ===== derivados (não precisa mexer) ===== */
+    --sombra: 0 6px 20px color-mix(in srgb, var(--azul-escuro) 10%, transparent);
+    --foco: color-mix(in srgb, var(--azul) 25%, transparent);
+    --raio: 14px;
+    --largura: 1100px;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--texto);
+    background: var(--fundo);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+img, video { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--azul); text-underline-offset: 3px; }
+a:hover { color: var(--azul-escuro); }
+
+:focus-visible {
+    outline: 3px solid var(--amarelo);
+    outline-offset: 2px;
+}
+
+h1, h2, h3 { line-height: 1.25; color: var(--azul-escuro); }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 0.6em; }
+h3 { font-size: 1.2rem; margin: 0 0 0.4em; }
+p  { margin: 0 0 1em; }
+
+/* ---------- Cabeçalho ---------- */
+header {
+    background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-medio) 100%);
+    color: var(--branco);
+    padding: 1.6rem 1.25rem 0;
+    border-bottom: 5px solid var(--amarelo);
+}
+
+header h1 {
+    max-width: var(--largura);
+    margin: 0 auto 0.15rem;
+    color: var(--branco);
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    letter-spacing: 0.02em;
+}
+
+header > p {
+    max-width: var(--largura);
+    margin: 0 auto 1rem;
+    color: var(--texto-header);
+}
+
+/* ---------- Menu ---------- */
+nav { max-width: var(--largura); margin: 1rem auto 0; }
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+nav a {
+    display: block;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover { background: color-mix(in srgb, var(--branco) 16%, transparent); color: var(--branco); }
+
+nav a[aria-current="page"] {
+    background: var(--amarelo);
+    color: var(--azul-escuro);
+}
+
+/* o último item (Orçamento) vira botão de destaque */
+nav li:last-child a { border: 2px solid var(--amarelo); }
+nav li:last-child a[aria-current="page"] { border-color: var(--amarelo); }
+
+/* ---------- Conteúdo ---------- */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: var(--largura);
+    margin: 0 auto;
+    padding: 2rem 1.25rem 3rem;
+}
+
+main > section,
+main > article {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+}
+
+main > section > h2:first-child,
+main > article > h2:first-child {
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--amarelo);
+    display: inline-block;
+}
+
+/* imagens principais */
+main img {
+    border-radius: 10px;
+    margin: 1rem 0;
+    box-shadow: var(--sombra);
+}
+
+/* ---------- Cartões (article dentro de section) ---------- */
+section > article {
+    background: var(--azul-claro);
+    border: 1px solid var(--borda);
+    border-left: 5px solid var(--azul);
+    border-radius: 10px;
+    padding: 1.1rem 1.25rem;
+    margin: 1rem 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+section > article:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra);
+}
+
+section > article p:last-child { margin-bottom: 0.6rem; }
+
+/* na página inicial os cartões ficam em grade */
+@media (min-width: 720px) {
+    main > section:last-of-type:has(> article ~ article ~ article ~ article) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    main > section:last-of-type:has(> article ~ article ~ article ~ article) > h2 {
+        grid-column: 1 / -1;
+        justify-self: start;
+    }
+    main > section:last-of-type:has(> article ~ article ~ article ~ article) > article {
+        margin: 0;
+    }
+}
+
+/* ---------- Links que parecem botões dentro de cartões ---------- */
+section > article > a,
+article > a {
+    display: inline-block;
+    background: var(--azul);
+    color: var(--branco);
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+section > article > a:hover,
+article > a:hover {
+    background: var(--amarelo);
+    color: var(--azul-escuro);
+}
+
+/* link do catálogo / links soltos dentro de section */
+main > section > a {
+    display: inline-block;
+    background: var(--amarelo);
+    color: var(--azul-escuro);
+    padding: 0.6rem 1.3rem;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+main > section > a:hover { background: var(--amarelo-escuro); color: var(--azul-escuro); }
+
+/* ---------- Listas ---------- */
+main ul, main ol { padding-left: 1.4rem; }
+main li { margin-bottom: 0.5rem; }
+main li::marker { color: var(--azul); font-weight: 700; }
+
+/* passos do processo (artigo do laboratório) */
+article ol > li {
+    background: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 0.9rem;
+}
+
+article ol > li p:last-of-type { margin-bottom: 0.4rem; }
+article ol > li img { margin: 0.6rem 0 0; }
+
+strong { color: var(--azul-escuro); }
+
+/* ---------- Vídeo ---------- */
+video {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 10px;
+    background: var(--azul-escuro);
+    box-shadow: var(--sombra);
+}
+
+/* ---------- Formulário de orçamento ---------- */
+form { margin-top: 0.5rem; }
+
+fieldset {
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    background: var(--fundo);
+    padding: 1rem 1.25rem 0.5rem;
+    margin: 0 0 1.25rem;
+}
+
+legend {
+    padding: 0.25rem 0.9rem;
+    background: var(--azul);
+    color: var(--branco);
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+label { font-weight: 600; color: var(--azul-escuro); font-size: 0.95rem; }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    max-width: 520px;
+    margin-top: 0.3rem;
+    padding: 0.65rem 0.8rem;
+    font: inherit;
+    color: var(--texto);
+    background: var(--branco);
+    border: 1px solid var(--borda-campo);
+    border-radius: 8px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea { resize: vertical; max-width: 100%; }
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px var(--foco);
+}
+
+input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-right: 0.4rem;
+    accent-color: var(--azul);
+    vertical-align: middle;
+}
+
+button {
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0.7rem 1.6rem;
+    border-radius: 999px;
+    border: 2px solid var(--azul);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+button[type="submit"] { background: var(--amarelo); border-color: var(--amarelo); color: var(--azul-escuro); }
+button[type="submit"]:hover { background: var(--amarelo-escuro); border-color: var(--amarelo-escuro); }
+
+button[type="reset"] { background: transparent; color: var(--azul); margin-left: 0.4rem; }
+button[type="reset"]:hover { background: var(--azul); color: var(--branco); }
+
+/* ---------- Rodapé ---------- */
+footer {
+    background: var(--azul-escuro);
+    color: var(--texto-header);
+    text-align: center;
+    padding: 1.6rem 1.25rem;
+    border-top: 5px solid var(--amarelo);
+}
+
+footer p { margin: 0.2rem 0; }
+footer a { color: var(--amarelo); font-weight: 600; }
+footer a:hover { color: var(--branco); }
+
+/* ---------- Telas pequenas ---------- */
+@media (max-width: 600px) {
+    body { font-size: 1rem; }
+    main { padding: 1.25rem 0.9rem 2rem; }
+    main > section, main > article { padding: 1.2rem; }
+    nav ul { gap: 0.3rem; }
+    nav a { font-size: 0.85rem; padding: 0.4rem 0.7rem; }
+    button { width: 100%; margin: 0.3rem 0 !important; }
+}
+
+/* ---------- Impressão ---------- */
+@media print {
+    header, footer { background: none; color: #000; border: 0; }
+    nav { display: none; }
+    main > section, main > article { box-shadow: none; border: 0; }
+}
+
+/* ---------- Balão de contato (canto inferior direito) ---------- */
+.balao-contato {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 1000;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem;
+    background: var(--amarelo);
+    color: var(--azul-escuro);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 999px;
+    box-shadow: var(--sombra);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.balao-contato:hover,
+.balao-contato:focus-visible {
+    background: var(--amarelo-escuro);
+    transform: translateY(-2px);
+}
+
+.balao-contato:focus-visible { outline: 3px solid var(--foco); outline-offset: 3px; }
+
+/* o texto só aparece ao passar o mouse ou focar; no celular fica só o ícone */
+.balao-contato span {
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: max-width 0.25s ease;
+}
+
+.balao-contato:hover span,
+.balao-contato:focus-visible span { max-width: 12rem; padding-right: 0.4rem; }
+
+@media print { .balao-contato { display: none; } }
