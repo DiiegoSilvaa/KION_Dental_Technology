@@ -6,18 +6,21 @@
 
 :root {
     /* ===== PALETA - troque só estes valores e o site inteiro muda ===== */
-    --azul-escuro: #0b2a4f;   /* cabeçalho, rodapé, títulos */
-    --azul-medio:  #123d75;   /* final do degradê do cabeçalho */
-    --azul:        #1b5fb8;   /* cor principal: botões, bordas, marcadores */
+    --azul-escuro: #00566b;   /* cabeçalho, rodapé, títulos */
+    --azul-medio:  #007a94;   /* final do degradê do cabeçalho */
+    --azul:        #00809c;   /* cor principal: botões, bordas, marcadores */
     --azul-claro:  #e8f0fb;   /* fundo dos cartões */
-    --amarelo:     #ffc20e;   /* cor de destaque: menu ativo, botão enviar, faixas */
-    --amarelo-escuro: #e6aa00; /* destaque ao passar o mouse */
-    --texto:       #1f2a37;   /* texto do corpo */
+    --amarelo:     ##f7c600;   /* cor de destaque: menu ativo, botão enviar, faixas */
+    --amarelo-escuro: ##dcaf00; /* destaque ao passar o mouse */
+    --texto:       #cfe0f5;   /* texto do corpo */
     --texto-header: #cfe0f5;  /* texto secundário sobre fundo escuro */
     --fundo:       #f5f8fc;   /* fundo da página */
     --branco:      #ffffff;   /* fundo dos blocos */
     --borda:       #d5e0ef;   /* bordas dos blocos e cartões */
     --borda-campo: #b9c8dd;   /* bordas dos campos do formulário */
+    --ciano:       #00d0f5;   /* faixas e linhas decorativas (cabeçalho, rodapé, títulos) */
+    --verde:       #8cd600;   /* fim do degradê das faixas (igual ao anel do logo) */
+    --degrade-faixa: linear-gradient(90deg, var(--ciano), var(--verde));
 
     /* ===== derivados (não precisa mexer) ===== */
     --sombra: 0 6px 20px color-mix(in srgb, var(--azul-escuro) 10%, transparent);
