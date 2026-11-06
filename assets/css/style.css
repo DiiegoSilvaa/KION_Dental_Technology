@@ -1,35 +1,26 @@
-/* ==========================================================
-   Kion Dental Tech - folha de estilo
-   Paleta inspirada em https://kiondental.tech/ (azul + amarelo).
-   Para ajustar as cores do site inteiro, mexa só nas variáveis abaixo.
-   ========================================================== */
-
 :root {
-    /* ===== PALETA - troque só estes valores e o site inteiro muda ===== */
-    --azul-escuro: #00566b;   /* cabeçalho, rodapé, títulos */
-    --azul-medio:  #007a94;   /* final do degradê do cabeçalho */
-    --azul:        #00809c;   /* cor principal: botões, bordas, marcadores */
-    --azul-claro:  #e8f0fb;   /* fundo dos cartões */
-    --amarelo:     ##f7c600;   /* cor de destaque: menu ativo, botão enviar, faixas */
-    --amarelo-escuro: ##dcaf00; /* destaque ao passar o mouse */
-    --texto:       #cfe0f5;   /* texto do corpo */
-    --texto-header: #cfe0f5;  /* texto secundário sobre fundo escuro */
-    --fundo:       #f5f8fc;   /* fundo da página */
-    --branco:      #ffffff;   /* fundo dos blocos */
-    --borda:       #d5e0ef;   /* bordas dos blocos e cartões */
-    --borda-campo: #b9c8dd;   /* bordas dos campos do formulário */
-    --ciano:       #00d0f5;   /* faixas e linhas decorativas (cabeçalho, rodapé, títulos) */
-    --verde:       #8cd600;   /* fim do degradê das faixas (igual ao anel do logo) */
+    --azul-escuro: #00566b;  
+    --azul-medio:  #007a94;   
+    --azul:        #00809c;   
+    --azul-claro:  #e8f0fb;   
+    --amarelo:     ##f7c600;   
+    --amarelo-escuro: ##dcaf00; 
+    --texto:       #cfe0f5;   
+    --texto-header: #cfe0f5;  
+    --fundo:       #f5f8fc;   
+    --branco:      #ffffff;   
+    --borda:       #d5e0ef;   
+    --borda-campo: #b9c8dd;   
+    --ciano:       #00d0f5;   
+    --verde:       #8cd600;   
     --degrade-faixa: linear-gradient(90deg, var(--ciano), var(--verde));
 
-    /* ===== derivados (não precisa mexer) ===== */
     --sombra: 0 6px 20px color-mix(in srgb, var(--azul-escuro) 10%, transparent);
     --foco: color-mix(in srgb, var(--azul) 25%, transparent);
     --raio: 14px;
     --largura: 1100px;
 }
 
-/* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
@@ -61,7 +52,6 @@ h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 0.6em; }
 h3 { font-size: 1.2rem; margin: 0 0 0.4em; }
 p  { margin: 0 0 1em; }
 
-/* ---------- Cabeçalho ---------- */
 header {
     background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-medio) 100%);
     color: var(--branco);
@@ -83,7 +73,6 @@ header > p {
     color: var(--texto-header);
 }
 
-/* ---------- Menu ---------- */
 nav { max-width: var(--largura); margin: 1rem auto 0; }
 
 nav ul {
@@ -117,7 +106,6 @@ nav a[aria-current="page"] {
 nav li:last-child a { border: 2px solid var(--amarelo); }
 nav li:last-child a[aria-current="page"] { border-color: var(--amarelo); }
 
-/* ---------- Conteúdo ---------- */
 main {
     flex: 1;
     width: 100%;
@@ -143,14 +131,12 @@ main > article > h2:first-child {
     display: inline-block;
 }
 
-/* imagens principais */
 main img {
     border-radius: 10px;
     margin: 1rem 0;
     box-shadow: var(--sombra);
 }
 
-/* ---------- Cartões (article dentro de section) ---------- */
 section > article {
     background: var(--azul-claro);
     border: 1px solid var(--borda);
@@ -168,7 +154,6 @@ section > article:hover {
 
 section > article p:last-child { margin-bottom: 0.6rem; }
 
-/* na página inicial os cartões ficam em grade */
 @media (min-width: 720px) {
     main > section:last-of-type:has(> article ~ article ~ article ~ article) {
         display: grid;
@@ -184,7 +169,6 @@ section > article p:last-child { margin-bottom: 0.6rem; }
     }
 }
 
-/* ---------- Links que parecem botões dentro de cartões ---------- */
 section > article > a,
 article > a {
     display: inline-block;
@@ -204,7 +188,6 @@ article > a:hover {
     color: var(--azul-escuro);
 }
 
-/* link do catálogo / links soltos dentro de section */
 main > section > a {
     display: inline-block;
     background: var(--amarelo);
@@ -218,12 +201,12 @@ main > section > a {
 
 main > section > a:hover { background: var(--amarelo-escuro); color: var(--azul-escuro); }
 
-/* ---------- Listas ---------- */
+
 main ul, main ol { padding-left: 1.4rem; }
 main li { margin-bottom: 0.5rem; }
 main li::marker { color: var(--azul); font-weight: 700; }
 
-/* passos do processo (artigo do laboratório) */
+
 article ol > li {
     background: var(--fundo);
     border: 1px solid var(--borda);
@@ -237,7 +220,7 @@ article ol > li img { margin: 0.6rem 0 0; }
 
 strong { color: var(--azul-escuro); }
 
-/* ---------- Vídeo ---------- */
+
 video {
     width: 100%;
     max-width: 640px;
@@ -246,7 +229,7 @@ video {
     box-shadow: var(--sombra);
 }
 
-/* ---------- Formulário de orçamento ---------- */
+
 form { margin-top: 0.5rem; }
 
 fieldset {
@@ -319,7 +302,7 @@ button[type="submit"]:hover { background: var(--amarelo-escuro); border-color: v
 button[type="reset"] { background: transparent; color: var(--azul); margin-left: 0.4rem; }
 button[type="reset"]:hover { background: var(--azul); color: var(--branco); }
 
-/* ---------- Rodapé ---------- */
+
 footer {
     background: var(--azul-escuro);
     color: var(--texto-header);
@@ -332,7 +315,7 @@ footer p { margin: 0.2rem 0; }
 footer a { color: var(--amarelo); font-weight: 600; }
 footer a:hover { color: var(--branco); }
 
-/* ---------- Telas pequenas ---------- */
+
 @media (max-width: 600px) {
     body { font-size: 1rem; }
     main { padding: 1.25rem 0.9rem 2rem; }
@@ -342,14 +325,14 @@ footer a:hover { color: var(--branco); }
     button { width: 100%; margin: 0.3rem 0 !important; }
 }
 
-/* ---------- Impressão ---------- */
+
 @media print {
     header, footer { background: none; color: #000; border: 0; }
     nav { display: none; }
     main > section, main > article { box-shadow: none; border: 0; }
 }
 
-/* ---------- Balão de contato (canto inferior direito) ---------- */
+
 .balao-contato {
     position: fixed;
     right: 1.25rem;
@@ -376,7 +359,7 @@ footer a:hover { color: var(--branco); }
 
 .balao-contato:focus-visible { outline: 3px solid var(--foco); outline-offset: 3px; }
 
-/* o texto só aparece ao passar o mouse ou focar; no celular fica só o ícone */
+
 .balao-contato span {
     max-width: 0;
     overflow: hidden;
