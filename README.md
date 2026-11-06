@@ -2,8 +2,8 @@
 
 Projeto desenvolvido em grupo como parte de um trabalho acadêmico, com o objetivo de aplicar em sala de aula os conhecimentos adquiridos sobre desenvolvimento de sites utilizando **HTML** e **CSS**. O projeto foi realizado com a autorização e em parceria com a empresa **KION Dental Technology**.
 
-- **Deploy Público:** https://6aedb9b6907063337fc6e9c4--comfy-pegasus-0ca980.netlify.app/
-- **Validação W3C:** [Relatório no W3C Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdentaltechproject.netlify.app%2F)
+- **Deploy Público:** [URL](https://6aedb9b6907063337fc6e9c4--comfy-pegasus-0ca980.netlify.app/)
+- **Validação W3C:** [Relatório no W3C Validator]([https://validator.w3.org/nu/?doc=https%3A%2F%2Fdentaltechproject.netlify.app%2F](https://validator.w3.org/nu/?doc=https%3A%2F%2F6aedb9b6907063337fc6e9c4--comfy-pegasus-0ca980.netlify.app%2F#file))
 
 ---
 
